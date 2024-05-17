@@ -225,15 +225,16 @@ public class UserInterface {
 
                 System.out.print("Enter the VIN of the vehicle you want to buy/lease: ");
                 int vehicleVin = scanner.nextInt();
-                scanner.nextLine(); // Consume the newline
+                scanner.nextLine(); // Consume newline
                 Vehicle vehicle = dealership.getVehicleByVin(vehicleVin);
 
                 displayVehicle(vehicle);
 
                 boolean isSaleOrLease = true;
+
                 while (isSaleOrLease) {
                     System.out.println("Would you like to buy or lease?");
-                    System.out.println("[1] Sale");
+                    System.out.println("[1] Buy");
                     System.out.println("[2] Lease");
                     System.out.println("[3] Return to main menu.");
 

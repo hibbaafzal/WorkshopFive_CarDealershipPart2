@@ -25,11 +25,11 @@ public class ContractDataManager {
                 output.append("SALE|");
                 SalesContract salesContract = (SalesContract) contract;
 
-                String financeStatus;
+                String financed;
                 if (salesContract.isFinanced()) {
-                    financeStatus = "YES";
+                    financed = "YES";
                 } else {
-                    financeStatus = "NO";
+                    financed = "NO";
                 }
 
                 pricingInformation = String.format("|%.2f|%.2f|%.2f|%.2f|%s|%.2f",
@@ -37,7 +37,7 @@ public class ContractDataManager {
                         salesContract.getRecordingFee(),
                         salesContract.getProcessingFee(),
                         contract.getTotalPrice(),
-                        financeStatus,
+                        financed,
                         contract.getMonthlyPayment());
             }
 

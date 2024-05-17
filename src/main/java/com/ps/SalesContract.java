@@ -16,8 +16,9 @@ public class SalesContract extends DealershipContract {
                          boolean isFinanced) {
 
         super(dateOfContract, customerName, customerEmail, vehicleSold);
+
         this.salesTaxPercentage = vehicleSold.getPrice() * .05;
-        this.recordingFee = 100;
+        this.recordingFee = 100; // fixed value
         if (vehicleSold.getPrice() < 10_000) { // processing fee
             this.processingFee = 295;
         } else {
@@ -40,7 +41,7 @@ public class SalesContract extends DealershipContract {
 
     @Override
     public double getMonthlyPayment() {
-        double monthlyInterestRate = 0; //as decimal
+        double monthlyInterestRate = 0;
 
         if (this.isFinanced && this.getVehicleSold().getPrice() > 10_000) {
             monthlyInterestRate = 4.25 / 100 / 12;
