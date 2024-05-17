@@ -78,6 +78,21 @@ public class Dealership {
         return filteredVehicles;
     }
 
+    private List<Vehicle> vehicles;
+
+
+
+    public Vehicle getVehicleByVin(int vin) {
+        for (Vehicle vehicle : this.inventory) {
+            if (vehicle.getVin() == vin) {
+                return vehicle;
+            }
+        }
+        return null; // or throw an exception if preferred
+    }
+
+
+
     public List<Vehicle> getAllVehicles(){
         return this.inventory;
     }
